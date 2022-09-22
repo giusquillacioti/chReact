@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 .App {
   text-align: center;
 }
@@ -35,4 +37,54 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: white; 
+  height: 100px;
+}
+
+.itemListContainer {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+
+h1 {
+  font-size: 15px;
+  margin: 0;
+  width: 350px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 350px;
+  height: 100px;
+  margin-right: 25px;
+}
+
+.navbar ul li {
+  padding: 0 10px;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.2s;
+}
+
+.navbar ul li:hover {
+  color: red;
+  cursor: pointer;
+}
+
+figure {
+  margin: 0;
+  height: 100px;
+  display: flex;
+  align-items: center;
 }
