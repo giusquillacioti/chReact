@@ -1,0 +1,92 @@
+[
+    {
+        "id": "1",
+        "name": "Olaplex N°3",
+        "price": 10000,
+        "category": "olaplex",
+        "description": "Baño de nutrición intenso que repara y fortalece la fibra capilar. Para todo tipo de cabellos.",
+        "size": 100,
+        "image": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/040/907/products/olaplexn3_adelante1-48f6ffef50f074e71d16052771214149-1024-1024.png"
+    },
+    {
+        "id": "2",
+        "name": "Olaplex N°4",
+        "price": 9800,
+        "category": "olaplex",
+        "description": "Shampoo fortalecedor. Repara, fortalece y nutre. Para todo tipo de cabellos.",
+        "size": 250,
+        "image": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/040/907/products/n4a1-e0053534db9f4c813d16052775129921-480-0.jpg"
+    },
+    {
+        "id": "3",
+        "name": "Olaplex N°4P",
+        "price": 9800,
+        "category": "olaplex",
+        "description": "Shampoo matizador. Para cabellos rubios y grises. Repara, hidrata y da brillo.",
+        "size": 250,
+        "image": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/040/907/products/4p-a1-e36916682150d6a6c716365703307935-480-0.jpg"
+    },
+    {
+        "id": "4",
+        "name": "Olaplex N°5",
+        "price": 9800,
+        "category": "olaplex",
+        "description": "Acondicionador. Repara, fortalece y nutre. Para todo tipo de cabellos.",
+        "size": 250,
+        "image": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/040/907/products/n5a1-9f59db78816b12184016057002227114-1024-1024.jpg"
+    },
+    {
+        "id": "5",
+        "name": "Olaplex N°6",
+        "price": 9800,
+        "category": "olaplex",
+        "description": "Crema de peinar. Repara, nutre, protege del calor y elimina frizz.",
+        "size": 100,
+        "image": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/040/907/products/n6a1-5fb950e4c0b10d139816052778189958-1024-1024.jpg"
+    },
+    {
+        "id": "6",
+        "name": "Olaplex N°7",
+        "price": 9500,
+        "category": "olaplex",
+        "description": "Sérum finalizador. Fortalece, repara, y da brillo al cabello.",
+        "size": 30,
+        "image": "https://d26lpennugtm8s.cloudfront.net/stores/001/040/907/rte/Large_JPG-No.7BondingOil-2.png"
+    },
+    {
+        "id": "7",
+        "name": "Shampoo BLONDME",
+        "price": 4500,
+        "category": "schwarzkopf",
+        "description": "Shampoo enriquecido para todo tipo de rubios.",
+        "size": 300,
+        "image": "https://static.beautytocare.com/media/catalog/product/cache/global/image/650x650/85e4522595efc69f496374d01ef2bf13/s/c/schwarzkopf-blondme-all-blondes-rich-shampoo-300ml.jpg"
+    },
+    {
+        "id": "8",
+        "name": "Acondicionador BLONDME",
+        "price": 4700,
+        "category": "schwarzkopf",
+        "description": "Acondicionador enriquecido para todo tipo de rubios.",
+        "size": 250,
+        "image": "https://cdn.shopify.com/s/files/1/0570/4787/5750/products/schwarzkopf-blondme-keratin-restore-all-blondes-rich-conditioner300ml_1200x.jpg?v=1645211410"
+    },
+    {
+        "id": "9",
+        "name": "Máscara BLONDME",
+        "price": 4800,
+        "category": "schwarzkopf",
+        "description": "Máscara enriquecida para todo tipo de rubios. Fortalece y da brillo al cabello.",
+        "size": 200,
+        "image": "http://d3ugyf2ht6aenh.cloudfront.net/stores/138/958/products/mascara-rich-editada1-206b43baa888520b7016476371237124-640-0.jpg"
+    },
+    {
+        "id": "10",
+        "name": "Protector Térmico OSIS+",
+        "price": 4200,
+        "category": "schwarzkopf",
+        "description": "Spray protector de calor (hasta 230°C).",
+        "size": 200,
+        "image": "https://www.capilarglobal.cl/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/i/dise_o_sin_t_tulo_2.png"
+    }
+]
