@@ -88,5 +88,50 @@
         "description": "Spray protector de calor (hasta 230°C).",
         "size": 200,
         "image": "https://www.capilarglobal.cl/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/i/dise_o_sin_t_tulo_2.png"
+    },
+    {
+        "id": "11",
+        "name": "Shampoo Diamond",
+        "price": 3000,
+        "category": "alfaparf",
+        "description": "Shampoo delicado iluminador para cabello normal.",
+        "size": 250,
+        "image": "https://farmaonline.vteximg.com.br/arquivos/ids/262169-0-0/8110656.jpg?v=637689705071100000"
+    },
+    {
+        "id": "12",
+        "name": "Shampoo Scalp Renew",
+        "price": 3000,
+        "category": "alfaparf",
+        "description": "Shampoo delicado energizante para cabellos debilitados, con tendencia a la caída.",
+        "size": 250,
+        "image": "https://cdn.shopify.com/s/files/1/0432/5133/5336/products/Sintitulo_7.png?v=1597950437"
+    },
+    {
+        "id": "13",
+        "name": "Shampoo Volume",
+        "price": 3000,
+        "category": "alfaparf",
+        "description": "Shampoo delicado volumizante y corporizante para cabellos finos.",
+        "size": 250,
+        "image": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/232/146/products/semi-di-lino-shampoo-azul11-0f4191e7ad00f06f8f16287215494808-1024-1024.png"
+    },
+    {
+        "id": "14",
+        "name": "Shampoo Reconstruction",
+        "price": 3200,
+        "category": "alfaparf",
+        "description": "Shampoo delicado reestructurante para cabellos dañados.",
+        "size": 250,
+        "image": "https://getthelookar.vteximg.com.br/arquivos/ids/160610-1000-1000/217096_low-shampoo-alfaparf-milano-semi-di-lino-reconstruction-x-250-ml_imagen-1.jpg?v=637340490524730000"
+    },
+    {
+        "id": "15",
+        "name": "Shampoo Moisture",
+        "price": 3000,
+        "category": "alfaparf",
+        "description": "Shampoo delicado nutritivo para cabellos secos.",
+        "size": 250,
+        "image": "https://farmaonline.vteximg.com.br/arquivos/ids/262166-0-0/8110659.jpg?v=637689705005530000"
     }
 ]

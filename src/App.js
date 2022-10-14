@@ -16,7 +16,7 @@ function App() {
           <Navbar />
         </header>
         <Routes>
-          <Route path={"/"} element={<ItemListContainer greeting={'Invitado'} />} />
+          <Route path={"/"} element={<ItemListContainer greeting={'Todos los productos'} />} />
           <Route path={"/category/:id"} element={<ItemListContainer />} />
           <Route path={"/item/:id"} element={<ItemDetailContainer />} />
           <Route path={"*"} element={<NotFound />} />
