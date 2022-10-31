@@ -8,7 +8,7 @@ const Navbar = () => {
                 <Link to="/category/olaplex"><li>Olaplex</li></Link>
                 <Link to="/category/schwarzkopf"><li>Schwarzkopf</li></Link>
                 <Link to="/category/alfaparf"><li>Alfaparf</li></Link>
-                <li><CartWidget /></li>
+                <Link to="/cart"><li><CartWidget /></li></Link>
             </ul>
         </nav>
     )

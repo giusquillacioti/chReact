@@ -94,7 +94,7 @@ h1 {
 }
 
 .navbar ul li:hover {
-  color: red;
+  color: rgb(153, 9, 9);
   cursor: pointer;
 }
 
@@ -161,11 +161,11 @@ figure {
   justify-content: space-between;
 }
 
-.productDetailText h2{
+.productDetailText h2 {
   font-size: 40px;
 }
 
-.productDetailText h3{
+.productDetailText h3 {
   font-size: 25px;
 }
 
@@ -174,10 +174,121 @@ figure {
   margin-bottom: 10px;
 }
 
-.addBtn button {
+.addBtn {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  height: 40px;
+}
+
+.addBtn .addtoCart {
   background-color: black;
   color: white;
   border-radius: 20px;
   padding: 10px 20px;
   text-align: center;
+  align-content: center;
+  margin-right: 30px;
+  height: 40px;
+}
+
+.addBtn .quantity {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.addBtn .quantity button {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.addBtn .quantity p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  margin: 0 10px;
+  border: 1px solid grey;
+  border-radius: 20px;
+  height: 30px;
+}
+
+.buyBtn {
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.buyBtn button {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  width: 200px;
+  transition: all 0.3s;
+}
+
+.buyBtn button:hover {
+  background-color: rgb(153, 9, 9);
+}
+
+.cartItemsContainer {
+  border: 1px solid black;
+  margin: 50px auto;
+  width: 600px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.total {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: end;
+  margin: 15px 0 0;
+  padding: 15px;
+  background-color: lightgrey;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  align-items: center;
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.cartItem img {
+  margin: 0 20px;
+}
+
+.cartItem h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cartItem div {
+  display: flex;
+}
+
+.cartItem .info{
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.cartItem .itemTotal {
+  width: 100px;
+  text-align: end;
+  margin-right: 15px;
+  font-size: 20px;
 }

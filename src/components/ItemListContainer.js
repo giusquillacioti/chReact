@@ -6,14 +6,14 @@ const ItemListContainer = ({ greeting }) => {
 
     const [products, setProducts] = useState([])
 
-    const {id}=useParams()
+    const { id } = useParams()
 
     useEffect(() => {
-        if(id){
+        if (id) {
             getProductsCategory()
-            }else{
+        } else {
             getProducts()
-            }
+        }
     }, [id])
 
     const getProducts = async () => {
@@ -25,11 +25,9 @@ const ItemListContainer = ({ greeting }) => {
     const getProductsCategory = async () => {
         const response = await fetch('../data.json')
         const data = await response.json()
-        setProducts(data.filter(item=>item.category === id))
-        console.log(data.filter(item=>item.category === id));
+        setProducts(data.filter(item => item.category === id))
+        //console.log(data.filter(item => item.category === id));
     }
-
-
 
     return (
         <>
