@@ -5,10 +5,12 @@ import CartItem from "./CartItem"
 
 const Cart = () => {
 
-    const { cart } = useCart()
+    const { cart, emptyCart, calcTotal } = useCart()
 
     const [cartState, setCartState] = useState(cart)
     const [empty, setEmpty] = useState(true)
+
+    let total = calcTotal()
 
     useEffect(() => {
         if (cart.length !== 0) {
@@ -16,20 +18,8 @@ const Cart = () => {
         }
     })  
 
-    const calcTotal = () => {
-        let itemTotal = cart.map(item => item.price * item.quantity);
-        const total = itemTotal.reduce((acc, currentValue) => acc + currentValue, 0);
-        return total
-    }
-    let total = calcTotal()
-
     const update = () => {
         setCartState()
-    }
-
-    const emptyCart = () => {
-        cart.length = 0
-        update()
     }
 
     return (

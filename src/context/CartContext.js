@@ -23,9 +23,35 @@ const CartProvider = ({ children }) => {
         }
     }
 
+    const remove = (name) => {
+        let removeIndex = cart.findIndex(item=> item.name === name);
+        cart.splice(removeIndex, 1)
+        console.log(`removed ${name} from cart`);
+    }
+
+    const emptyCart = () => {
+        cart.length = 0
+    }
+
+    const calcTotal = () => {
+        let itemTotal = cart.map(item => item.price * item.quantity);
+        const total = itemTotal.reduce((acc, currentValue) => acc + currentValue, 0);
+        return total
+    }
+
+    const calcItems = () => {
+        let itemTotal = cart.map(item => item.quantity);
+        const total = itemTotal.reduce((acc, currentValue) => acc + currentValue, 0);
+        return total
+    }
+
     const context = {
         cart,
-        add
+        add,
+        remove,
+        emptyCart,
+        calcTotal,
+        calcItems
     }
 
     return (
