@@ -22,7 +22,7 @@ const Counter = ({ detail }) => {
 
     const addToCart = () => {
         add(detail.name, counter, detail.price, detail.image)
-        console.log(cart);
+        console.log(`added ${counter} ${detail.name} to cart`);
     }
 
     return (

@@ -1,4 +1,15 @@
-const CartItem = ({ name, quantity, price, image }) => {
+import { useCart } from "../context/CartContext"
+
+const CartItem = ({ name, quantity, price, image, update }) => {
+
+    const { cart } = useCart()
+
+    const remove = () => {
+        let removeIndex = cart.findIndex(item=> item.name === name);
+        cart.splice(removeIndex, 1)
+        console.log(`removed ${name} from cart`);
+    }
+
     return (
         <div className="cartItem">
             <div>
@@ -10,6 +21,7 @@ const CartItem = ({ name, quantity, price, image }) => {
                 </div>
             </div>
             <h4 className="itemTotal">${price*quantity}</h4>
+            <button onClick={() => {remove(); update()}}>X</button>
         </div>
     )
 }

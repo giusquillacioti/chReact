@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import Item from "./Item"
+import { collection, getDocs, getFirestore } from "firebase/firestore"
 
 const ItemListContainer = ({ greeting }) => {
 
@@ -16,17 +17,34 @@ const ItemListContainer = ({ greeting }) => {
         }
     }, [id])
 
-    const getProducts = async () => {
+    /* const getProducts = async () => {
         const response = await fetch('../data.json')
         const data = await response.json()
         setProducts(data)
-    }
+    } */
 
-    const getProductsCategory = async () => {
+    /* const getProductsCategory = async () => {
         const response = await fetch('../data.json')
         const data = await response.json()
         setProducts(data.filter(item => item.category === id))
-        //console.log(data.filter(item => item.category === id));
+    } */
+
+    const getProducts = () => {
+        const database = getFirestore()
+        const products = collection(database, 'products')
+        getDocs(products).then(snapshot => {
+            const data = snapshot.docs.map( e => ({id: e.id, ...e.data()}) )
+            setProducts(data)
+        })
+    }
+
+    const getProductsCategory = () => {
+        const database = getFirestore()
+        const products = collection(database, 'products')
+        getDocs(products).then(snapshot => {
+            const data = snapshot.docs.map( e => ({id: e.id, ...e.data()}) )
+            setProducts(data.filter(item => item.category === id))
+        })
     }
 
     return (

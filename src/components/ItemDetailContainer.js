@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemCounter from "./ItemCounter"
+import { collection, getDocs, getFirestore } from "firebase/firestore"
 
 const ItemDetailContainer = () => {
 
@@ -13,12 +14,22 @@ const ItemDetailContainer = () => {
     }, [])
 
 
-    const getDetail = async () => {
+/*     const getDetail = async () => {
         const response = await fetch('../data.json')
         const data = await response.json()
         const itemDetail = data.find(i => i.id == itemId)
         //console.log(itemDetail)
         setDetail(itemDetail)
+    } */
+
+    const getDetail = () => {
+        const database = getFirestore()
+        const products = collection(database, 'products')
+        getDocs(products).then(snapshot => {
+            const data = snapshot.docs.map( e => ({id: e.id, ...e.data()}) )
+            const itemDetail = data.find(i => i.id == itemId)
+            setDetail(itemDetail)
+        })
     }
 
     return (

@@ -15,7 +15,6 @@ const CartProvider = ({ children }) => {
         let newItem = { name, quantity, price, image }
 
         let added = cart.find(item => item.name === newItem.name)
-        //console.log(added);
 
         if (added !== undefined) {
             added.quantity += newItem.quantity
