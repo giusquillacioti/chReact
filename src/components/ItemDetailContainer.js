@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
         const database = getFirestore()
         const products = collection(database, 'products')
         getDocs(products).then(snapshot => {
-            const data = snapshot.docs.map( e => ({id: e.id, ...e.data()}) )
+            const data = snapshot.docs.map(e => ({ id: e.id, ...e.data() }))
             const itemDetail = data.find(i => i.id == itemId)
             setDetail(itemDetail)
         })
@@ -35,7 +35,7 @@ const ItemDetailContainer = () => {
                     <p>{detail.description} </p>
                     <h4>{detail.size}ml</h4>
                     {detail.stock > 15 ?
-                    '' : <p>¡Sólo quedan {detail.stock} unidades disponibles!</p>
+                        '' : <p>¡Sólo quedan {detail.stock} unidades disponibles!</p>
                     }
                 </div>
 

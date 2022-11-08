@@ -10,7 +10,7 @@ const Checkout = () => {
 
     const [buyer, setBuyer] = useState({})
 
-    const { cart, calcTotal, updateStock} = useCart()
+    const { cart, calcTotal, updateStock } = useCart()
 
     const order = () => {
 
@@ -18,14 +18,14 @@ const Checkout = () => {
 
         let order = {
             buyer: buyer,
-            items: cart.map(item => ({id: item.id, name: item.name, quantity: item.quantity, price: item.price})),
+            items: cart.map(item => ({ id: item.id, name: item.name, quantity: item.quantity, price: item.price })),
             date: Date().toLocaleString(),
             total: total
         }
 
         const database = getFirestore();
-        const ordersCollection = collection(database, 'orders') ;
-        addDoc(ordersCollection, order).then(({id}) => {
+        const ordersCollection = collection(database, 'orders');
+        addDoc(ordersCollection, order).then(({ id }) => {
 
             Swal.fire(`¡Gracias por realizar tu compra!
 

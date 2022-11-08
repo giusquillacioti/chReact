@@ -438,3 +438,7 @@ select {
 .checkoutBtns button:hover {
   background-color: rgb(153, 9, 9);
 }
+
+.notFound {
+  margin: 50px;
+}

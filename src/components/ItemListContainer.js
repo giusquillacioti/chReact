@@ -21,7 +21,7 @@ const ItemListContainer = ({ greeting }) => {
         const database = getFirestore()
         const products = collection(database, 'products')
         getDocs(products).then(snapshot => {
-            const data = snapshot.docs.map( e => ({id: e.id, ...e.data()}) )
+            const data = snapshot.docs.map(e => ({ id: e.id, ...e.data() }))
             setProducts(data)
         })
     }
@@ -30,7 +30,7 @@ const ItemListContainer = ({ greeting }) => {
         const database = getFirestore()
         const products = collection(database, 'products')
         getDocs(products).then(snapshot => {
-            const data = snapshot.docs.map( e => ({id: e.id, ...e.data()}) )
+            const data = snapshot.docs.map(e => ({ id: e.id, ...e.data() }))
             setProducts(data.filter(item => item.category === id))
         })
     }

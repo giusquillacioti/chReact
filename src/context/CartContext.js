@@ -64,7 +64,7 @@ const CartProvider = ({ children }) => {
 
             const database = getFirestore();
             const productDoc = doc(database, 'products', productId);
-            updateDoc(productDoc, {stock: newStock})
+            updateDoc(productDoc, { stock: newStock })
         });
     }
 

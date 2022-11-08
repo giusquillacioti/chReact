@@ -48,19 +48,19 @@ const Cart = () => {
 
     return (
         <>
-        {empty ?
-        <div className="empty">
-            <h2>Tu carrito está vacío.</h2>
-            <Link to="/">
-                <button>Ir a la tienda</button>
-            </Link>
-        </div>
-        :
-        <>
-            <CartItemsContainer />
-            <CartBtns />
-        </>
-        }
+            {empty ?
+                <div className="empty">
+                    <h2>Tu carrito está vacío.</h2>
+                    <Link to="/">
+                        <button>Ir a la tienda</button>
+                    </Link>
+                </div>
+                :
+                <>
+                    <CartItemsContainer />
+                    <CartBtns />
+                </>
+            }
         </>
     )
 }
