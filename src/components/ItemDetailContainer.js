@@ -13,15 +13,6 @@ const ItemDetailContainer = () => {
         getDetail()
     }, [])
 
-
-/*     const getDetail = async () => {
-        const response = await fetch('../data.json')
-        const data = await response.json()
-        const itemDetail = data.find(i => i.id == itemId)
-        //console.log(itemDetail)
-        setDetail(itemDetail)
-    } */
-
     const getDetail = () => {
         const database = getFirestore()
         const products = collection(database, 'products')
@@ -43,6 +34,9 @@ const ItemDetailContainer = () => {
                 <div>
                     <p>{detail.description} </p>
                     <h4>{detail.size}ml</h4>
+                    {detail.stock > 15 ?
+                    '' : <p>¡Sólo quedan {detail.stock} unidades disponibles!</p>
+                    }
                 </div>
 
                 <ItemCounter detail={detail} />

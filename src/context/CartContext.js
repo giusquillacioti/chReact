@@ -1,5 +1,7 @@
+import { doc, getFirestore, updateDoc } from "firebase/firestore";
 import { useContext, useState } from "react";
 import { createContext } from "react";
+import Swal from "sweetalert2";
 
 const CartContext = createContext([])
 
@@ -11,10 +13,10 @@ const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([])
 
-    const add = (name, quantity, price, image) => {
-        let newItem = { name, quantity, price, image }
+    const add = (id, name, quantity, price, image, stock) => {
+        let newItem = { id, name, quantity, price, image, stock }
 
-        let added = cart.find(item => item.name === newItem.name)
+        let added = cart.find(item => item.id === newItem.id)
 
         if (added !== undefined) {
             added.quantity += newItem.quantity
@@ -23,10 +25,19 @@ const CartProvider = ({ children }) => {
         }
     }
 
-    const remove = (name) => {
-        let removeIndex = cart.findIndex(item=> item.name === name);
+    const remove = (id, name) => {
+        let removeIndex = cart.findIndex(item => item.id === id);
         cart.splice(removeIndex, 1)
-        console.log(`removed ${name} from cart`);
+
+        Swal.fire({
+            text: `Se eliminó ${name} del carrito.`,
+            icon: 'success',
+            toast: true,
+            position: 'bottom-right',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
+        })
     }
 
     const emptyCart = () => {
@@ -45,13 +56,26 @@ const CartProvider = ({ children }) => {
         return total
     }
 
+    const updateStock = () => {
+        cart.forEach(product => {
+
+            let productId = product.id
+            let newStock = product.stock - product.quantity
+
+            const database = getFirestore();
+            const productDoc = doc(database, 'products', productId);
+            updateDoc(productDoc, {stock: newStock})
+        });
+    }
+
     const context = {
         cart,
         add,
         remove,
         emptyCart,
         calcTotal,
-        calcItems
+        calcItems,
+        updateStock
     }
 
     return (

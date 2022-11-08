@@ -17,18 +17,6 @@ const ItemListContainer = ({ greeting }) => {
         }
     }, [id])
 
-    /* const getProducts = async () => {
-        const response = await fetch('../data.json')
-        const data = await response.json()
-        setProducts(data)
-    } */
-
-    /* const getProductsCategory = async () => {
-        const response = await fetch('../data.json')
-        const data = await response.json()
-        setProducts(data.filter(item => item.category === id))
-    } */
-
     const getProducts = () => {
         const database = getFirestore()
         const products = collection(database, 'products')
@@ -49,9 +37,9 @@ const ItemListContainer = ({ greeting }) => {
 
     return (
         <>
-            <div className="itemListContainer">
+            {/* <div className="itemListContainer">
                 <h1>{greeting}</h1>
-            </div>
+            </div> */}
             <div className="cardsContainer">
                 {products.map(p => <Item key={p.id} {...p} />)}
             </div>

@@ -1,21 +1,23 @@
 import { useEffect, useState } from "react"
 import { useCart } from "../context/CartContext"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 const CartWidget = () => {
 
-    const { cart, calcItems } = useCart()
+    const { calcItems } = useCart()
     const [widgetCount, setWidgetCount] = useState(0)
-    
+
     let itemCount = calcItems()
-    
+
     useEffect(() => {
         setWidgetCount(itemCount)
     })
 
     return (
         <div className="widgetContainer">
-            <i className="material-icons">shopping_cart</i>
-            {widgetCount === 0 ? '' : <p>{widgetCount}</p> }
+            <FontAwesomeIcon icon={faCartShopping} />
+            {widgetCount === 0 ? '' : <p>{widgetCount}</p>}
         </div>
     )
 }

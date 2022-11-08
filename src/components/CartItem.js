@@ -1,8 +1,8 @@
 import { useCart } from "../context/CartContext"
 
-const CartItem = ({ name, quantity, price, image, update }) => {
+const CartItem = ({ id, name, quantity, price, image, setCartState }) => {
 
-    const { cart, remove} = useCart()
+    const { remove} = useCart()
 
     return (
         <div className="cartItem">
@@ -15,7 +15,7 @@ const CartItem = ({ name, quantity, price, image, update }) => {
                 </div>
             </div>
             <h4 className="itemTotal">${price*quantity}</h4>
-            <button onClick={() => {remove(name); update()}}>X</button>
+            <button onClick={() => {remove(id, name); setCartState()}}>X</button>
         </div>
     )
 }

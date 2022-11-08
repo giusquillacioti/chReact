@@ -3,7 +3,7 @@ import CartWidget from '../components/CartWidget';
 
 const Navbar = () => {
     return (
-        <nav className="navbar black">
+        <nav>
             <ul>
                 <Link to="/category/olaplex"><li>Olaplex</li></Link>
                 <Link to="/category/schwarzkopf"><li>Schwarzkopf</li></Link>

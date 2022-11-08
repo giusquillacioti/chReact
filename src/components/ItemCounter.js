@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 import { useCart } from "../context/CartContext";
 
 
@@ -21,17 +22,36 @@ const Counter = ({ detail }) => {
     }
 
     const addToCart = () => {
-        add(detail.name, counter, detail.price, detail.image)
-        console.log(`added ${counter} ${detail.name} to cart`);
+        add(detail.id, detail.name, counter, detail.price, detail.image, detail.stock)
+        
+        Swal.fire({
+            text: `Se agregó ${detail.name} al carrito.`,
+            icon: 'success',
+            toast: true,
+            position: 'bottom-right',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
+        })
     }
 
     return (
         <div className="addBtn">
             <button className="addtoCart" onClick={addToCart}>Agregar al carrito</button>
             <div className="quantity">
-                <button onClick={removeOne}>-</button>
+                {
+                counter === 1 ?
+                    ''
+                    :
+                    <button onClick={removeOne}>-</button>
+                }
                 <p>{counter}</p>
-                <button onClick={addOne}>+</button>
+                {
+                counter === detail.stock ?
+                    ''
+                    :
+                    <button onClick={addOne}>+</button>
+                }
             </div>
         </div>
     )
