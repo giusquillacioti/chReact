@@ -17,31 +17,26 @@ const CartProvider = ({ children }) => {
         let newItem = { id, name, quantity, price, image, stock }
 
         let added = cart.find(item => item.id === newItem.id)
+        const addedIndex = cart.indexOf(added);
+        const copyOfCart = [...cart]
 
-        if (added !== undefined) {
-            added.quantity += newItem.quantity
+        if (added) {
+            copyOfCart[addedIndex].quantity += newItem.quantity
+            setCart(copyOfCart)
         } else {
             setCart(cart => cart.concat(newItem))
         }
     }
 
-    const remove = (id, name) => {
+    const remove = (id) => {
         let removeIndex = cart.findIndex(item => item.id === id);
-        cart.splice(removeIndex, 1)
-
-        Swal.fire({
-            text: `Se eliminó ${name} del carrito.`,
-            icon: 'success',
-            toast: true,
-            position: 'bottom-right',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true
-        })
+        const copyOfCart = [...cart]
+        copyOfCart.splice(removeIndex, 1)
+        setCart(copyOfCart)
     }
 
     const emptyCart = () => {
-        cart.length = 0
+        setCart([])
     }
 
     const calcTotal = () => {

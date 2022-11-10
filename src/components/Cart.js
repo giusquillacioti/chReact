@@ -22,11 +22,9 @@ export const CartItemsContainer = () => {
     const { cart, calcTotal } = useCart()
     let total = calcTotal()
 
-    const [cartState, setCartState] = useState(cart)
-
     return (
         <div className="cartItemsContainer">
-            {cart.map(i => <CartItem key={i.name} {...i} setCartState={setCartState} />)}
+            {cart.map(i => <CartItem key={i.name} {...i} />)}
             <div className="total">
                 <h2>Precio total: ${total} </h2>
             </div>
@@ -38,17 +36,9 @@ const Cart = () => {
 
     const { cart } = useCart()
 
-    const [empty, setEmpty] = useState(true)
-
-    useEffect(() => {
-        if (cart.length !== 0) {
-            setEmpty(false)
-        }
-    })
-
     return (
         <>
-            {empty ?
+            {!cart.length ?
                 <div className="empty">
                     <h2>Tu carrito está vacío.</h2>
                     <Link to="/">

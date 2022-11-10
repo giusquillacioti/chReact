@@ -7,7 +7,7 @@ const Counter = ({ detail }) => {
 
     const [counter, setCounter] = useState(1)
 
-    const { cart, add } = useCart()
+    const { add } = useCart()
 
     const addOne = () => {
         if (counter < detail.stock) {
@@ -39,19 +39,9 @@ const Counter = ({ detail }) => {
         <div className="addBtn">
             <button className="addtoCart" onClick={addToCart}>Agregar al carrito</button>
             <div className="quantity">
-                {
-                    counter === 1 ?
-                        ''
-                        :
-                        <button onClick={removeOne}>-</button>
-                }
+                { counter > 1 && <button onClick={removeOne}>-</button> }
                 <p>{counter}</p>
-                {
-                    counter === detail.stock ?
-                        ''
-                        :
-                        <button onClick={addOne}>+</button>
-                }
+                { counter !== detail.stock && <button onClick={addOne}>+</button> }
             </div>
         </div>
     )

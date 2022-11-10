@@ -7,17 +7,16 @@ const CartWidget = () => {
 
     const { calcItems } = useCart()
     const [widgetCount, setWidgetCount] = useState(0)
-
     let itemCount = calcItems()
 
     useEffect(() => {
         setWidgetCount(itemCount)
-    })
+    }, [itemCount])
 
     return (
         <div className="widgetContainer">
             <FontAwesomeIcon icon={faCartShopping} />
-            {widgetCount === 0 ? '' : <p>{widgetCount}</p>}
+            {widgetCount > 0 && <p>{widgetCount}</p>}
         </div>
     )
 }

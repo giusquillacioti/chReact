@@ -1,6 +1,6 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { useState } from "react"
-import { Form, Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Swal from "sweetalert2"
 import { useCart } from "../context/CartContext"
 import BuyerForm from "./BuyerForm"
@@ -10,7 +10,9 @@ const Checkout = () => {
 
     const [buyer, setBuyer] = useState({})
 
-    const { cart, calcTotal, updateStock } = useCart()
+    const { cart, calcTotal, updateStock, emptyCart } = useCart()
+
+    const navigate = useNavigate()
 
     const order = () => {
 
@@ -27,11 +29,21 @@ const Checkout = () => {
         const ordersCollection = collection(database, 'orders');
         addDoc(ordersCollection, order).then(({ id }) => {
 
-            Swal.fire(`¡Gracias por realizar tu compra!
+            Swal.fire({
+                title: `¡Gracias por realizar tu compra!
+    
+                El identificador de tu orden es ${id}.
+    
+                Podés pasar a buscar tus productos por nuestro local de Martes a Sábados de 10 a 19hs.`,
 
-            El identificador de tu orden es ${id}.
+                showConfirmButton: true,
 
-            Podés pasar a buscar tus productos por nuestro local de Martes a Sábados de 10 a 19hs.`)
+                confirmButtonText: 'Finalizar'
+
+                }).then(() => {
+                    navigate('/')
+                    emptyCart()
+                })
         })
 
         updateStock()

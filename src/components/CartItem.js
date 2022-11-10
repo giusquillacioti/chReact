@@ -1,8 +1,27 @@
+import { useLocation } from "react-router-dom"
+import Swal from "sweetalert2"
 import { useCart } from "../context/CartContext"
 
-const CartItem = ({ id, name, quantity, price, image, setCartState }) => {
+const CartItem = ({ id, name, quantity, price, image }) => {
 
     const { remove } = useCart()
+
+    const location = useLocation()
+    const isCheckout = location.pathname === '/checkout'
+
+    const removeFromCart = () => {
+        remove(id)
+
+        Swal.fire({
+            text: `Se eliminó ${name} del carrito.`,
+            icon: 'success',
+            toast: true,
+            position: 'bottom-right',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
+        })
+    }
 
     return (
         <div className="cartItem">
@@ -15,7 +34,7 @@ const CartItem = ({ id, name, quantity, price, image, setCartState }) => {
                 </div>
             </div>
             <h4 className="itemTotal">${price * quantity}</h4>
-            <button onClick={() => { remove(id, name); setCartState() }}>X</button>
+            { !isCheckout && <button onClick={removeFromCart}>X</button> }
         </div>
     )
 }
