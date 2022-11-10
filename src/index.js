@@ -14,7 +14,7 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_appId
 };
 
-//eslint-disable-next-line
+/* eslint-disable */
 const app = initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
