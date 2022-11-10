@@ -4,12 +4,17 @@ import ItemCounter from "./ItemCounter"
 import { collection, getDocs, getFirestore } from "firebase/firestore"
 import NotFound from "./NotFound"
 
+
 const ItemDetailContainer = () => {
-
+    
     const { id: itemId } = useParams()
-
+    
     const [detail, setDetail] = useState({})
-
+    
+    useEffect(() => {
+        getDetail()
+    }, [])
+    
     const getDetail = () => {
         const database = getFirestore()
         const products = collection(database, 'products')
@@ -24,10 +29,6 @@ const ItemDetailContainer = () => {
         })
     }
 
-    useEffect(() => {
-        getDetail()
-    }, [])
-    
     return (
         <>
         { detail ?

@@ -8,7 +8,15 @@ const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([])
 
     const { id } = useParams()
-    
+
+    useEffect(() => {
+        if (id) {
+            getProductsCategory()
+        } else {
+            getProducts()
+        }
+    })
+
     const getProducts = () => {
         const database = getFirestore()
         const products = collection(database, 'products')
@@ -27,23 +35,10 @@ const ItemListContainer = ({ greeting }) => {
         })
     }
 
-    useEffect(() => {
-        if (id) {
-            getProductsCategory()
-        } else {
-            getProducts()
-        }
-    }, [id])
-
     return (
-        <>
-            {/* <div className="itemListContainer">
-                <h1>{greeting}</h1>
-            </div> */}
             <div className="cardsContainer">
                 {products.map(p => <Item key={p.id} {...p} />)}
             </div>
-        </>
     )
 }
 export default ItemListContainer

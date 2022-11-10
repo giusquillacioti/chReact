@@ -19,7 +19,7 @@ function App() {
             <Navbar />
           </header>
           <Routes>
-            <Route path={"/"} element={<ItemListContainer /* greeting={'Todos los productos'} */ />} />
+            <Route path={"/"} element={<ItemListContainer />} />
             <Route path={"/category/:id"} element={<ItemListContainer />} />
             <Route path={"/item/:id"} element={<ItemDetailContainer />} />
             <Route path={"/cart"} element={<Cart />} />
