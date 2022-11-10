@@ -15,7 +15,7 @@ const ItemListContainer = ({ greeting }) => {
         } else {
             getProducts()
         }
-    })
+    }, [id])
 
     const getProducts = () => {
         const database = getFirestore()

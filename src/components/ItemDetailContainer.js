@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
     
     useEffect(() => {
         getDetail()
-    })
+    }, [])
     
     const getDetail = () => {
         const database = getFirestore()
