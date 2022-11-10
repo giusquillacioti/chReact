@@ -8,15 +8,7 @@ const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([])
 
     const { id } = useParams()
-
-    useEffect(() => {
-        if (id) {
-            getProductsCategory()
-        } else {
-            getProducts()
-        }
-    }, [id])
-
+    
     const getProducts = () => {
         const database = getFirestore()
         const products = collection(database, 'products')
@@ -34,6 +26,14 @@ const ItemListContainer = ({ greeting }) => {
             setProducts(data.filter(item => item.category === id))
         })
     }
+
+    useEffect(() => {
+        if (id) {
+            getProductsCategory()
+        } else {
+            getProducts()
+        }
+    }, [id])
 
     return (
         <>

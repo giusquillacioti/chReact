@@ -1,7 +1,6 @@
 import { doc, getFirestore, updateDoc } from "firebase/firestore";
 import { useContext, useState } from "react";
 import { createContext } from "react";
-import Swal from "sweetalert2";
 
 const CartContext = createContext([])
 

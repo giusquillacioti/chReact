@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemCounter from "./ItemCounter"
 import { collection, getDocs, getFirestore } from "firebase/firestore"
+import NotFound from "./NotFound"
 
 const ItemDetailContainer = () => {
 
@@ -9,22 +10,28 @@ const ItemDetailContainer = () => {
 
     const [detail, setDetail] = useState({})
 
-    useEffect(() => {
-        getDetail()
-    }, [])
-
     const getDetail = () => {
         const database = getFirestore()
         const products = collection(database, 'products')
         getDocs(products).then(snapshot => {
             const data = snapshot.docs.map(e => ({ id: e.id, ...e.data() }))
-            const itemDetail = data.find(i => i.id == itemId)
-            setDetail(itemDetail)
+            const itemDetail = data.find(i => i.id === itemId)
+            if (itemDetail) {
+                setDetail(itemDetail)
+            } else {
+                setDetail()
+            }
         })
     }
 
+    useEffect(() => {
+        getDetail()
+    }, [])
+    
     return (
-        <div className="productDetail">
+        <>
+        { detail ?
+            <div className="productDetail">
             <figure>
                 <img src={detail.image} alt={detail.name} height="300" width="300" />
             </figure>
@@ -41,7 +48,11 @@ const ItemDetailContainer = () => {
 
                 <ItemCounter detail={detail} />
             </div>
-        </div>
-    )
+            </div>
+            :
+            <NotFound />
+        }
+        </>
+            )
 }
 export default ItemDetailContainer
