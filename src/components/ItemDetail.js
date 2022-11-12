@@ -5,7 +5,7 @@ import { collection, getDocs, getFirestore } from "firebase/firestore"
 import NotFound from "./NotFound"
 
 
-const ItemDetailContainer = () => {
+const ItemDetail = () => {
     
     const { id: itemId } = useParams()
     
@@ -56,4 +56,4 @@ const ItemDetailContainer = () => {
         </>
             )
 }
-export default ItemDetailContainer
+export default ItemDetail

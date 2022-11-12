@@ -2,8 +2,6 @@ const BuyerForm = ({ setBuyer }) => {
 
     const getData = (e) => {
         setBuyer(buyer => ({ ...buyer, [e.target.name]: e.target.value }))
-        console.log(e.target.name);
-        console.log(e.target.value);
     }
 
     return (

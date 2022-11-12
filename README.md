@@ -1,3 +1,11 @@
+# Modo.Lola
+
+**Modo.Lola** es un e-commerce de productos capilares basado en un negocio físico. 
+
+Se incluyeron dependencias como **Font Awesome** y **Sweet Alert**, la primera para incluir un widget dinámico en el carrito, y la última para mejorar la experiencia del usuario, dejándole saber cuando acciones como agregar o quitar un producto del carrito fueron exitosas.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

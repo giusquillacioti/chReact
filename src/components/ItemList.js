@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import Item from "./Item"
 import { collection, getDocs, getFirestore } from "firebase/firestore"
 
-const ItemListContainer = ({ greeting }) => {
+const ItemList = ({ greeting }) => {
 
     const [products, setProducts] = useState([])
 
@@ -41,4 +41,4 @@ const ItemListContainer = ({ greeting }) => {
             </div>
     )
 }
-export default ItemListContainer
+export default ItemList

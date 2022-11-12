@@ -1,9 +1,9 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Brand from './components/Brand';
-import ItemListContainer from './components/ItemListContainer';
+import ItemList from './components/ItemList';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemDetail from './components/ItemDetail';
 import NotFound from './components/NotFound';
 import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart';
@@ -19,9 +19,9 @@ function App() {
             <Navbar />
           </header>
           <Routes>
-            <Route path={"/"} element={<ItemListContainer />} />
-            <Route path={"/category/:id"} element={<ItemListContainer />} />
-            <Route path={"/item/:id"} element={<ItemDetailContainer />} />
+            <Route path={"/"} element={<ItemList />} />
+            <Route path={"/category/:id"} element={<ItemList />} />
+            <Route path={"/item/:id"} element={<ItemDetail />} />
             <Route path={"/cart"} element={<Cart />} />
             <Route path={"/checkout"} element={<Checkout />} />
             <Route path={"*"} element={<NotFound />} />

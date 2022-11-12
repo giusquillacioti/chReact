@@ -40,10 +40,10 @@ const Checkout = () => {
 
                 confirmButtonText: 'Finalizar'
 
-                }).then(() => {
-                    navigate('/')
-                    emptyCart()
-                })
+            }).then(() => {
+                navigate('/')
+                emptyCart()
+            })
         })
 
         updateStock()
