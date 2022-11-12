@@ -4,7 +4,7 @@
 
 Se incluyeron dependencias como **Font Awesome** y **Sweet Alert**, la primera para incluir un widget dinámico en el carrito, y la última para mejorar la experiencia del usuario, dejándole saber cuando acciones como agregar o quitar un producto del carrito fueron exitosas.
 
-
+https://modo-lola.vercel.app/
 
 # Getting Started with Create React App
 
